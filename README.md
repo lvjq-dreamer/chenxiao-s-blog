@@ -158,17 +158,20 @@ JDK版本使用的是8 ，开发工具为Intellij IDEA
 
 Semantic UI中文网站：[传送门](https://onebugman.cn/semantic-ui/)
 
+
+
 插件集成相关
-| 介绍       | 名称            | 获取地址                                   |
-| ---------- | --------------- | ------------------------------------------ |
-| 内容排版   | typo.css        | https://github.com/sofish/typo.css         |
-| 动画       | animate.css     | https://daneden.github.io/animate.css/     |
-| 代码高亮   | prism           | https://github.com/PrismJS/prism           |
-| 目录生成   | Tocbot          | https://tscanlin.github.io/tocbot/         |
-| 滚动侦测   | waypoints       | http://imakewebthings.com/waypoints        |
-| 平滑滚动   | jquert.scrollTo | https://github.com/flesler/jquery.scrollTo |
-| 二维码生成 | qrcode.js       | https://davidshimjs.github.io/qrcodejs/    |
-| 编辑器     | MarkDown        | https://pandao.github.io/editor.md         |
+
+* 内容排版  typo.css  https://github.com/sofish/typo.css 
+* 动画  animate.css  https://daneden.github.io/animate.css/  
+* 代码高亮  prism  https://github.com/PrismJS/prism  
+* 目录生成  Tocbot  https://tscanlin.github.io/tocbot/  
+* 滚动侦测  waypoints  http://imakewebthings.com/waypoints  
+* 平滑滚动  jquert.scrollTo  https://github.com/flesler/jquery.scrollTo  
+* 二维码生成  qrcode.js  https://davidshimjs.github.io/qrcodejs/  
+* 编辑器  MarkDown  https://pandao.github.io/editor.md
+
+
 
 
 下面说明关于博客的详细信息，如果整体符合你的预期，最后部分会有部署启动的演示。
