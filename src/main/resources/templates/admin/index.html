@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head(~{:: title})">
+    <meta charset="UTF-8">
+    <!--首先完成移动端的预览设置问题,设备的宽度初始缩放倍数为1.0倍，这里还可以设置用户禁止缩放等等-->
+    <meta name="viewport" content="device-width,initial-scale=1.0">
+    <title>博客后台</title>
+    <!--接下来进行semanticUI的css CDN的引用-->
+    <link rel="stylesheet" href="../../static/css/semantic.css" th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css}">
+    <!--引入我们自己写的css-->
+    <link rel="stylesheet" href="../../static/css/me.css">
+
+<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"-->
+<!--          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="../../static/css/all.css" th:href="@{https://use.fontawesome.com/releases/v5.7.2/css/all.css}"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+
+    <!--导航栏-->
+    <nav th:replace="admin/_fragments :: menu(0)" class="ui  inverted attached segment m-padded-tb-mini m-shadow-small">
+
+        <!--container的好处很多，其中之一使得设备正常显示-->
+        <div class="ui  container">
+            <!--使用一个菜单来放我们所有的导航链接-->
+            <div class="ui  inverted  secondary stackable menu">
+
+                 <h2 class="ui  teal header item">管理后台</h2>
+               &nbsp;
+               <a class=" item m-item m-mobile-hide"><i class="fas fa-carrot"></i>博客</a>
+               <a class=" item m-item m-mobile-hide"><i class="fas fa-ice-cream"></i>分类</a>
+               <a class="item m-item m-mobile-hide" ><i class="fas fa-candy-cane"></i>标签</a>
+
+                <div class="right menu">
+                    <div class="ui dropdown item">
+                        <div class="text">
+                            <img class="ui avatar image" th:src="@{https://img-blog.csdnimg.cn/20191017154606633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70}" src="https://img-blog.csdnimg.cn/20191017154606633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70" >
+                            沉晓
+                        </div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a href="#" class="item">注销</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--中部主体-->
+    <div class="m-container-small m-padded-tb-big ">
+       <div class="ui container">
+           <div class="ui success large message">
+               <h3>Hi,</h3>
+               <p><span th:text="${session.user.nickname}">沉晓</span>，welcome to back!</p>
+           </div>
+
+           <img th:src="@{https://img-blog.csdnimg.cn/20191017154606633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70}"  src="https://img-blog.csdnimg.cn/20191017154606633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70"  alt=""  class="ui rounded border fluid image">
+       </div>
+        <br>
+        <div class="m-text-a ui horizontal divider ">my Voice</div>
+        <br><br><br>
+
+        <div align="center" style="font-size:18px;font-weight:500;font-family: 楷体!important;">
+            <p class="ui left aligned">我们可以欺骗别人</p>
+            <p class="content "> 却无法欺骗自己</p>
+            <p class=""> 当我们走向枝繁叶茂的五月</p>
+            <p class=""> 青春就不再是一个谜</p><br>
+            <p class="">向上的路</p>
+            <p class="">总是坎坷又崎岖，</p>
+            <p class=""> 要永远保持最初的浪漫，</p>
+            <p class="">  真是不容易</p><br>
+            <p class=""> 有人悲哀</p>
+            <p class=""> 有人欣喜</p>
+            <p class=""> 当我们跨越了一座高山</p>
+            <p class="">也就跨越了一个真实的自己</p>
+            <br>
+            <P class="right aligned">by 汪国真《跨越自己》</P>
+            <br><br>
+            <i class="fas fa-camera-retro"></i>
+            <i class="fas fa-bacon"></i><i class="fas fa-bacon"></i><i class="fas fa-bacon"></i><i class="fas fa-bacon"></i><i class="fas fa-bacon"></i><i class="fas fa-bacon"></i><i class="fas fa-bacon"></i>
+            </i><i class="fas fa-bacon"></i></i><i class="fas fa-bacon"></i></i><i class="fas fa-bacon"></i></i><i class="fas fa-bacon"></i></i><i class="fas fa-bacon"></i></i><i class="fas fa-bacon"></i>
+            </i><i class="fas fa-bacon"></i></i><i class="fas fa-bacon"></i>
+        </div>
+    </div>
+
+
+
+<th:block th:replace="admin/_fragments :: script">
+<!--也许用到的jQuery的引用-->
+<script src="../../static/js/jquery.min.js" th:src="@{https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js}"></script>
+<!--这里进行semanticUI的js 的CDN的引用 -->
+<script src="../../static/js/semantic.min.js" th:src="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js}"></script>
+</th:block>
+
+</body>
+</html>
+
+
+<!--<div class="three wide column">-->
+
+<!--    <h4 class="ui inverted header m-text-spaced m-opacity-small">推荐博客</h4>-->
+
+<!--    <div class="ui inverted link list ">-->
+<!--        <a th:if="${blog.published} == true" th:each="blog : ${recommends}" href="#" th:text="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}" class="item">用户故事(User Story)</a>-->
+
+<!--    </div>-->
+<!--</div>-->

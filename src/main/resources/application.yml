@@ -1,0 +1,87 @@
+spring:
+  thymeleaf:
+    mode: HTML
+    cache: false # 开发环境 保证cache关闭,打开缓存不利于开发
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver    # 如果是Mysql8.0需要修改
+    url: yours    # 你的数据库地址和建立的数据库
+    username: yourUsername  #你的数据库的账号
+    password: yourPassword #你的数据库的密码
+    # Druid连接池配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 初始化
+    initialSize: 3
+    # 最大
+    maxActive: 20
+    # 最小
+    minIdle: 3
+    # 最大连接等待超时时间
+    maxWait: 60000
+    # 打开PSCache,并且指定每个连接PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    # 配置间隔多久才进行一次检测,检测需要关闭的空闲连接,单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    # 配置一个连接在池中最小生存的时间,单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    # 配置监控统计拦截的filters,去掉后监控界面sql将无法统计,'wall'用于防火墙
+    filters: stat, wall, log4j
+  #Redis
+  redis:
+    host: 127.0.0.1  # 你的redis的地址
+    port: 6379  # 你的redis的端口号
+    # 连接超时时间（毫秒）
+    timeout: 10000
+    # Redis默认情况下有16个分片，这里配置具体使用的分片，默认是
+    database: 0
+    # 连接池最大连接数（使用负值表示没有限制） 默认 8
+    lettuce:
+      shutdown-timeout: 200ms
+      pool:
+        max-active: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+        max-wait: -1
+        # 连接池中的最大空闲连接 默认 8
+        max-idle: 8
+        # 连接池中的最小空闲连接 默认 0
+        min-idle: 0
+  # spring data jpa配置
+  jpa:
+    hibernate:
+      # 实体类有更新时，数据库表更新
+      ddl-auto: update
+      # update：加载hibernate时根据实体类model创建数据库表，
+      #这是表名的依据是@Entity注解的值或者@Table注解的值，sessionFactory关闭表不会删除，
+      #且下一次启动会根据实体model更新结构或者有新的实体类会创建新的表。
+      #validate：启动时验证表的结构，不会创建表
+      #none：启动时不做任何操作
+    show-sql: true
+    format_sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  http:
+    # 过滤字符编码
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  # 邮件
+  mail:
+    host: smtp.163.com
+    username: XXX  # 发件人的用户名,这个自己把握，设置邮箱地址也不妨
+    password: XXX # 授权码
+    protocol: smtp
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.port: 994
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+    from: XXX # 发件人的邮箱地址  
+
+server:
+  # 端口号
+  port: 9000

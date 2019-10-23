@@ -1,0 +1,23 @@
+.ui.vertical.basic.segment.masthead{
+    height: 100%;
+    background: url(https://ftp.bmp.ovh/imgs/2019/10/496a8ce3b7e7a6a1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    padding-right: 40px;
+    /*position: relative;*/
+} .ui.center.inverted.aligned.header.slogan{
+    font-size: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+} .ui.orange.circular.button {
+        width: 200px;
+} .login-text{
+    margin-left: 30px;
+   font-size: 20px;
+   font-family: verdana ;
+   margin-bottom: 20px !important;
+}
+

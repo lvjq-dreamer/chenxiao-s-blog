@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!--首先完成移动端的预览设置问题,设备的宽度初始缩放倍数为1.0倍，这里还可以设置用户禁止缩放等等-->
+    <meta name="viewport" content="device-width,initial-scale=1.0">
+    <title>个人信息修改</title>
+
+    <!--注意静态资源的获取-->
+    <link rel="stylesheet" th:href="@{/css/changeInfo.css}" href="../../static/css/changeInfo.css" media="screen" title="no title" charset="utf-8" />
+
+    <!--接下来进行semanticUI的css CDN的引用-->
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css}" href="../../static/css/semantic.css">
+
+    <link rel="stylesheet" href="../../static/css/all.css" th:href="@{https://use.fontawesome.com/releases/v5.7.2/css/all.css}"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <div>
+        <img class="ui fluid image" src="https://w.wallhaven.cc/full/39/wallhaven-397oyv.jpg">
+    </div>
+
+
+
+    <!--中部主体-->
+    <div class="m-padded-tb-big ">
+        <div class="ui container" >
+            <form action="#"  th:action="@{change}" th:object="${user}" method="post" class="ui form">
+                <div class="field">
+                    <div class="ui left labeled input changeInfo-item">
+                        <label class="ui compact teal basic label">头像</label>
+                        <input th:value="*{avatar}" type="text" name="avatar">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="ui left labeled input changeInfo-item">
+                        <label class="ui compact teal basic label">昵称</label>
+                        <input th:value="*{nickname}" type="text" name="nickname">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left labeled input changeInfo-item">
+                        <label class="ui compact teal basic label">username</label>
+                        <input th:value="*{username}" type="text" name="username">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left labeled input changeInfo-item">
+                        <label class="ui compact teal basic label">password</label>
+                        <input th:value="*{password}" type="text" name="password">
+                    </div>
+                </div>
+
+                <div class="ui right aligned container">
+<!--                    <button type="button" class="ui button">返回</button>-->
+                    <button class="ui teal button  changeInfo-button " >提交</button>
+                </div>
+
+<!--                            <div class="ui success message changeInfo-check">-->
+<!--                                <div class="header">表单完成</div>-->
+<!--                                <p>您已经更改信息完成</p>-->
+<!--                            </div>-->
+<!--                            <div class="ui submit button changeInfo-button">提交</div>-->
+<!--                <a class="positive ui submit button changeInfo-button" type="button">确定，就是它了</a>-->
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+<!--也许用到的jQuery的引用-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<!--这里进行semanticUI的js 的CDN的引用 -->
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script>
+
+
+</script>
+</body>
+</html>

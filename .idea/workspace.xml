@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="61626503-29bf-4258-adec-c46bd4918509" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="myblog@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="myblog@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="myblog@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1SEOcbYVM0l2CfqQuCbRkNaEBh5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../blogdoc" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\git项目\博客\myblog\src\main\resources\templates\alert" />
+      <recent name="D:\git项目\博客\myblog\src\main\resources\static\js" />
+      <recent name="D:\git项目\博客\myblog\src\main\resources\static\click" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lvjq.blog" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git项目\博客\myblog\src\main\resources\static\images" />
+      <recent name="D:\git项目\博客\myblog\src\main\resources\static\css" />
+      <recent name="D:\git项目\博客\myblog\src\main\resources" />
+      <recent name="D:\git项目\博客\myblog\src\main\java\com\lvjq\blog\aspect" />
+      <recent name="D:\git项目\博客\myblog\src\main\java\com\lvjq\blog\util" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="BlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myblog" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lvjq.blog.BlogApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="blog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lvjq.blog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lvjq.blog.BlogApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BlogApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="61626503-29bf-4258-adec-c46bd4918509" name="Default Changelist" comment="" />
+      <created>1565184107776</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565184107776</updated>
+      <workItem from="1565184112762" duration="1818000" />
+      <workItem from="1565227401413" duration="2034000" />
+      <workItem from="1565229461433" duration="19594000" />
+      <workItem from="1565263606056" duration="4288000" />
+      <workItem from="1565317324146" duration="3205000" />
+      <workItem from="1565336836399" duration="285000" />
+      <workItem from="1566024577592" duration="14694000" />
+      <workItem from="1566207988713" duration="136000" />
+      <workItem from="1566208235045" duration="63000" />
+      <workItem from="1566211143226" duration="812000" />
+      <workItem from="1566290285239" duration="12035000" />
+      <workItem from="1566347483452" duration="10832000" />
+      <workItem from="1566698514573" duration="2471000" />
+      <workItem from="1566796546515" duration="3577000" />
+      <workItem from="1566809309370" duration="9303000" />
+      <workItem from="1566864054495" duration="2528000" />
+      <workItem from="1566876879886" duration="2184000" />
+      <workItem from="1566907028552" duration="7354000" />
+      <workItem from="1566948909987" duration="1544000" />
+      <workItem from="1567149465618" duration="12256000" />
+      <workItem from="1567302389979" duration="6114000" />
+      <workItem from="1567346290486" duration="1697000" />
+      <workItem from="1567390420168" duration="16394000" />
+      <workItem from="1567467893420" duration="11895000" />
+      <workItem from="1567558729112" duration="10402000" />
+      <workItem from="1567597097480" duration="29000" />
+      <workItem from="1567648054232" duration="11125000" />
+      <workItem from="1567727362627" duration="3931000" />
+      <workItem from="1567842546562" duration="257000" />
+      <workItem from="1569232021539" duration="812000" />
+      <workItem from="1569305960448" duration="552000" />
+      <workItem from="1571125372257" duration="831000" />
+      <workItem from="1571224412829" duration="11628000" />
+      <workItem from="1571277357015" duration="33188000" />
+      <workItem from="1571357741431" duration="30458000" />
+      <workItem from="1571396068600" duration="6942000" />
+      <workItem from="1571452550998" duration="122000" />
+      <workItem from="1571454006653" duration="10198000" />
+      <workItem from="1571548897986" duration="52000" />
+      <workItem from="1571559542533" duration="71000" />
+      <workItem from="1571625635192" duration="2736000" />
+      <workItem from="1571645357809" duration="17000" />
+      <workItem from="1571703620997" duration="23609000" />
+      <workItem from="1571734646675" duration="4199000" />
+      <workItem from="1571790868928" duration="16767000" />
+      <workItem from="1571816751641" duration="7230000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+</project>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!--首先完成移动端的预览设置问题,设备的宽度初始缩放倍数为1.0倍，这里还可以设置用户禁止缩放等等-->
+    <meta name="viewport" content="device-width,initial-scale=1.0">
+    <title>登录</title>
+
+    <!--注意静态资源的获取-->
+    <link rel="stylesheet" th:href="@{/css/custom.css}" href="../../static/css/custom.css" media="screen" title="no title" charset="utf-8" />
+
+    <!--接下来进行semanticUI的css CDN的引用-->
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css}" href="../../static/css/semantic.css">
+</head>
+
+<body>
+<div class="ui  vertical basic segment masthead">
+    <h1 class="ui center inverted aligned header slogan"> For you, one thousand times again<p class="sub header">Dream my dream</p> <button type="button" name="button" class="ui orange circular button">Login in</button> </h1>
+    <!--    <div class="ui error message"></div>-->
+    <!--    <div class="ui mini negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></div>-->
+</div>
+
+
+<div class="ui modal">
+    <div class="ui segment">
+        <img class="ui small left floated Medium image" src="../../static/images/myPicture.jpg" th:src="@{images/myPicture.jpg}">
+        <p class="login-text">Dream what you want to dream, <br>go where you want to go,<br> be what you want to be,<br> because you have only one life and one chance to do all the things you want to do.</p>
+    </div>
+    <form class="ui large form" method="post" action="#" th:action="@{/admin/login}">
+        <div class="ui stacked segment">
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="fas fa-carrot"></i>
+                    <input type="text" name="username" placeholder="用户名">
+                </div>
+            </div>
+            <br>
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="fas fa-carrot"></i>
+                    <input type="password" name="password" placeholder="密码">
+                </div>
+            </div>
+            <br>
+            <div class="ui fluid large teal submit button">登录</div>
+        </div>
+    </form>
+</div>
+
+<!--也许用到的jQuery的引用-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<!--这里进行semanticUI的js 的CDN的引用 -->
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script>
+
+    $('.ui.orange.circular.button').click( function () {
+        $('.ui.modal').modal('show');
+    }) ;
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+
+    $('#payButton').popup({
+        popup : $('.payQR.popup'),
+        on : 'click',
+        position: 'bottom center'
+    });
+    $('.ui.dropdown').dropdown();
+    $(document)
+        .ready(function() {
+            $('.ui.form')
+                .form({
+                    fields: {
+                        email: {
+                            identifier  : 'username',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : '请输入用户名。'
+                                }
+                            ]
+                        },
+                        password: {
+                            identifier  : 'password',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : '请输入密码。'
+                                },
+                                {
+                                    type   : 'length[6]',
+                                    prompt : '密码至少为6位。'
+                                }
+                            ]
+                        }
+                    }
+                })
+            ;
+        })
+    ;
+</script>
+</body>
+</html>

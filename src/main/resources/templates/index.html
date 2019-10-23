@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <!--首先完成移动端的预览设置问题,设备的宽度初始缩放倍数为1.0倍，这里还可以设置用户禁止缩放等等-->
+    <meta name="viewport" content="device-width,initial-scale=1.0">
+    <title>首页</title>
+    <!--接下来进行semanticUI的css CDN的引用-->
+    <link rel="stylesheet" href="../static/css/semantic.css" th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css}">
+
+    <!--引入我们自定义的css-->
+    <link rel="stylesheet" href="../static/css/me.css" >
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" th:href="@{css/all.css}"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!--动画效果的插件-->
+    <link rel="stylesheet" href="../static/css/animate.css">
+
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+<body>
+
+<!--左侧边留言板-->
+<div class="ui left sidebar inverted vertical menu">
+
+    <form method="post" th:action="@{/messages}" class="ui inverted center aligned form">
+
+        <div class="ui field">
+            <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" placeholder="别忘记留下昵称" name="nickname">
+            </div>
+        </div>
+        <div class="ui field">
+            <textarea  placeholder="留下你的声音吧。" name="content"></textarea>
+        </div>
+        <div class="ui  field">
+            <button type="submit" id="commentpost-btn" class="ui right aligned m-margin-bottom-small m-mobile-wide  teal button"><i class="edit icon"></i>发布</button>
+        </div>
+    </form>
+
+
+    <div th:each="message : ${messages}" class="header item m-text-spaced m-padded-tb-big ">
+        <span th:text="${message.nickname}">无名氏</span>:<br><br>
+        <span th:text="${message.content}">路遥知马力，日久见人心</span>
+        <br><br>
+        <div th:text="${#dates.format(message.createTime,'yyyy-MM-dd HH:mm')}" class="ui right aligned">2019-08-08 19:00</div>
+    </div>
+
+</div>
+
+
+
+<!--右侧边音乐盒-->
+<div class="ui right sidebar inverted vertical menu">
+    <audio id="audio" name="audio" autoplay="autoplay"   controls="controls" loop="loop"  preload="auto" src="../static/music/脚踏车.mp3" th:src="@{/music/脚踏车.mp3}"></audio>
+
+    <a class="music-1" href="#">
+        <div class="header item m-text-spaced m-padded-tb-big ">
+            <span>1.脚踏车</span>
+        </div>
+    </a>
+    <a class="music-2" href="#">
+        <div class="header item m-text-spaced m-padded-tb-big ">
+            <span>2.淡水海边</span>
+        </div>
+    </a>
+
+    <a class="music-3" href="#">
+        <div class="header item m-text-spaced m-padded-tb-big ">
+            <span>3.早操</span>
+        </div>
+    </a>
+    <a class="music-4" href="#">
+        <div class="header item m-text-spaced m-padded-tb-big ">
+            <span>4.Angel</span>
+        </div>
+    </a>
+    <a class="music-5" href="#">
+        <div class="header item m-text-spaced m-padded-tb-big ">
+            <span>5.First Kiss</span>
+        </div>
+    </a>
+</div>
+
+
+<!--主体-->
+<div class="pusher">
+    <!--导航栏-->
+    <nav th:replace="_fragments :: menu(1)"  class="ui   attached segment m-padded-tb-mini m-shadow-small animated fadeInDown">
+
+        <!--container的好处很多，其中之一使得设备正常显示-->
+        <div class="ui container">
+            <!--使用一个菜单来放我们所有的导航链接-->
+            <div class="ui  secondary stackable menu">
+               <a class="item">
+                   <img class="ui circular image" src="https://picsum.photos/id/1025/50/50">
+                   &nbsp;&nbsp;&nbsp;沉晓
+               </a>&nbsp;
+               <a class=" item m-item m-mobile-hide"><i class="fas fa-carrot"></i>首页</a>
+                <a class="item m-item m-mobile-hide"><i class="fas fa-ice-cream"></i>分类</a>
+                <a class="item m-item m-mobile-hide" ><i class="fas fa-candy-cane"></i>标签</a>
+                <a class="item m-item m-mobile-hide"><i class="fas fa-pizza-slice"></i>归档</a>
+                <a class="item m-item m-mobile-hide"><i class="fas fa-cookie"></i>本站</a>
+                <a class="item m-item m-mobile-hide"><i class="fas fa-fish"></i>友链</a>
+                <a class="item m-item m-mobile-hide"><i class="fas fa-seedling"></i>关于我</a>
+                <div class="right m-item item m-mobile-hide">
+                    <div class="ui icon inverted  input">
+                        <input type="text" placeholder="Search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--这里来弄一个导航隐藏按钮-->
+        <a href="#" class="ui black icon button m-right-top m-mobile-show menu toggle">
+            <i class="sidebar icon"></i>
+        </a>
+
+    </nav>
+    <!--中部主体-->
+    <div class=" m-padded-tb-large" >
+
+        <div class="ui stackable this  container m-container-nine" >
+
+            <!--广播和留言板-->
+            <div class="ui stackable middle aligned grid animated lightSpeedIn ">
+                <div class=" left aligned thirteen wide column   m-mobile-hide">
+                    <div class="ui basic raised segment m-padded-tb-small centerMessage " >
+                        <div class="ui teal header ">
+                            <div class="ui text shape m-inline-block">
+                                <div class="sides ">
+                                    <div class="ui  side active m-text-spaced ">
+                                        <span>The unexamined life is not worth living</span>——————by&nbsp;&nbsp;<span> Socrates Pan</span>
+                                    </div>
+<!--                                    <div th:each="message : ${messages}"   class="ui  side  ">-->
+<!--                                        <div class="m-text-spaced">-->
+<!--                                            <span th:text="${#strings.abbreviate(message.content,30)}">业精于勤，荒于嬉；行成于思，毁于随。</span>-->
+<!--                                            ——————by&nbsp;&nbsp;&nbsp;&nbsp;<span th:text="${message.nickname}">韩愈</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="two wide center aligned column m-padded-tb-this">
+                    <button id="sidebar-btn" class="ui mini  teal button" >留言板</button>
+                    <button id="music-btn" class="ui mini orange button">音乐盒</button>
+                </div>
+
+            </div>
+
+            <div class="ui stackable  grid m-padded-tb-small">
+
+                <!--左边的明信片和小便签-->
+                <div class="ui  three wide   column m-column">
+
+                    <!--个人明信片-->
+                   <div class="ui   link  card m-card-center">
+                        <div class="image">
+                            <img src="https://img-blog.csdnimg.cn/20191022151413277.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70" th:src="@{/images/myPicture.jpg}">
+                        </div>
+                        <div class="content">
+                            <a class="header" href="#aboutme">沉晓推荐</a>
+                            <div class="meta">
+                                <a style="">Java探索家,爱分享,爱生活</a>
+                            </div>
+                            <div class=" description m-padded" style="font-family: 楷体;font-weight: 800 ;!important;">
+                                学而不思则罔，<br>
+                                思而不学则殆。
+                            </div>
+                        </div>
+                        <div class=" extra content">
+                            <a href="https://github.com/Lvjunqiao" target="_blank" class="ui circular icon button"><i class="github icon"></i></a>
+                            <a href="https://blog.csdn.net/qq_42322103" target="_blank" class="ui circular icon button"><i class="fab fa-cuttlefish"></i></a>
+                            <a href="#"  class="ui qq circular icon button" data-content="946408024" data-position="bottom center"><i class="qq icon"></i></a>
+                        </div>
+
+                    </div>
+
+<!--                    <div class="three wide column">-->
+
+<!--                        <h4 class="ui inverted header m-text-spaced m-opacity-small">推荐博客</h4>-->
+
+<!--                        <div class="ui inverted link list ">-->
+<!--                            <a th:if="${blog.published} == true" th:each="blog : ${recommends}" href="#" th:text="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}" class="item">用户故事(User Story)</a>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <!--这里是一根分割线-->
+                    <div class="m-text-a ui horizontal divider m-margin  ">推荐博文</div>
+                    <!--下面是一些链接-->
+                    <div class="ui cards" th:if="${blog.published} == true" th:each="blog : ${recommends}" >
+                        <a class="orange  card m-card-center" href="#" th:href="@{/blog/{id}(id=${blog.id})}">
+                            <div class="content">
+                                <div class="header" th:text="${blog.title}">收藏阳光</div>
+                                <div class="description">
+                                    <p th:text="${blog.type.name}">记录生活中美好的事情</p>
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <div class="right floated author">
+                                    <p>推荐~</p>
+                                </div>
+                            </div>
+                        </a>
+<!--                        <a class="teal  card m-card-center" href="#">-->
+<!--                            <div class="content" style="background:url(https://img-blog.csdnimg.cn/20191022152110568.png)">-->
+
+<!--                                <div class="header">瓶水斋</div>-->
+<!--                                <div class="description">-->
+<!--                                    <p>点点滴滴，皆是成长</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="extra content">-->
+<!--                                <div class="right floated author">-->
+<!--                                    <img class="ui avatar image" src="https://img-blog.csdnimg.cn/20191022151413277.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70" th:src="@{'https://img-blog.csdnimg.cn/20191022151413277.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70'}"> 沉晓-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </a>-->
+                    </div>
+                    <br><br>
+                    <div class="ui  section divider"></div>
+
+
+                    <!--最新评论-->
+                    <div id="comment-container" class="ui stackable raised segments ">
+                        <div th:fragment="commentList">
+                            <div class="ui segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="fas fa-cat"></i>  最新评论
+                                </div>
+                                <div class="right aligned column">
+                                    <p>->唠两句呗</p>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div th:each="comment : ${commentsPage.content}" class="ui vertical stackable segment ">
+                                <div class="ui stackable grid m-padded-big">
+                                    <div class="ui row m-padded-tb-mini">
+                                            <a href="#" th:text="${comment.blog.title}" th:href="@{/blog/{id}(id=${comment.blog.id})}" >
+                                                2020春招-阿里面试</a>
+                                    </div>
+                                    <div class="ui row m-padded-tb-mini-two " style="color: gray!important;">
+                                        <div class="ui grey color"><span th:text="${comment.nickname}">HR</span>：<span th:text="${#strings.abbreviate(comment.content,12)}">能否实现你来阿里的梦想取决于你的态度</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui attached segment" th:if="${commentsPage.totalPages}>1">
+                                <div class="ui two column grid">
+                                    <div class=" column">
+                                        <button id="comment-last"  th:unless="${commentsPage.first}" onclick="commentsPageUp()"   class="ui grey basic button">上一页</button>
+                                    </div>
+                                    <div class="ui right aligned column">
+                                        <button id="comment-next" th:unless="${commentsPage.last}" onclick="commentsPageDown()"  class="ui grey basic button">下一页</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="ui  section divider"></div>
+                    <div class="ui left aligned header">
+                        待添加...
+                    </div>
+                </div>
+
+                <!--中间的每周目标和文章-->
+                <div class="ui ten wide column m-padded-lr-small">
+                    <!--本周目标和上周成果-->
+                    <div class="ui stackable two column grid">
+                            <div class="column" >
+                                <div class="ui raised segment">
+                                    <a class="ui red ribbon label">上周</a>
+                                    <span>收获</span>
+
+                                    <div class="ui middle aligned animated list">
+                                        <div th:each="bulletin : ${bulletins}" class="item">
+                                            <img class="ui avatar image" src="../static/images/headpicture.jpg" th:src="@{/images/thelittleprince.jpg}">
+                                            <div class="content">
+                                                <div th:text="${bulletin.harvest}" class="header">拯救地球</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="ui raised segment">
+                                    <a class="ui orange  ribbon label">本周</a>
+                                    <span>待完成</span>
+                                    <div class="ui middle aligned animated list">
+                                        <div th:each="bulletin : ${bulletins}" class="item">
+                                            <img class="ui avatar image" src="../static/images/headpicture.jpg" th:src="@{/images/flower.jpg}">
+                                            <div class="content">
+                                                <div th:text="${bulletin.uncompleted}" class="header">偷走月亮</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    <!--这里是一根分割线-->
+                    <div class="ui horizontal divider m-margin " style="font-family:楷体;font-size: 20px; font-weight: 600;!important;">最新博客</div>
+
+
+
+                    <!--文章列表-->
+                    <div class="ui raised segment m-margin-small" th:each="blog : ${page.content}" th:unless="${blog.published}==false">
+                        <div class="ui stackable mobile reversed grid">
+                            <!--11份来显示内容-->
+                            <div class="ui eleven wide column">
+
+                                <h3 class="ui  header m-padded-tb-up"  ><a th:text="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}" href="#" target="_blank" style="font-family:宋体;color: black !important;">你在天堂遇见的五个人</a></h3>
+                                <a href="#" target="_blank" th:href="@{/blog/{id}(id=${blog.id})}" class="ui header">
+                                <p th:text="${blog.description}" class="  " style="font-size: 15px; font-weight: 500 !important;letter-spacing: 1px !important;line-height: 2.5;" >
+                                    世上没有偶然的行为。我们都是联系在一起的。你无法将一个生命和另一个生命分割开来，就像风和微风紧密相连一样。 所以请珍惜珍惜你的人, 请感恩让你生命更加美好的人!
+                                </p><font style="font-size: 14px;!important;"><u><i>点击详情>></i></u></font></a>
+                                <div class="ui divider "></div>
+                                <div class="ui middle aligned grid">
+                                    <div class="six wide column">
+                                        <div class="ui mini horizontal link list">
+                                            <div class="item">
+                                                <img th:src="${blog.user.avatar}" src="https://unsplash.it/100/100?image=1005"  class="ui avatar image">
+                                                <div class="content"><h5 th:text="${blog.user.nickname}" class="ui header m-opacity-mini" >沉晓</h5> </div>
+                                            </div>
+                                            <div class="item">
+                                                <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}" >2019-8-8</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="left aligned seven wide column">
+
+                                        <a th:href="@{/tags/{id}(id=${tag.id})}" th:each="tag : ${blog.tags}" href="#"   class=" m-margin-smalls">
+                                            <i class="fas fa-tag"></i>
+                                            <span th:text="${tag.name}">方法论</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="right aligned three wide column">
+                                        <a href="#" th:href="@{/types/{id}(id=${blog.type.id})}"  th:text="${blog.type.name}" target="_blank" class="ui  red basic label m-text-thin ">看过的书</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--5份来显示图片-->
+                            <div class="five wide column">
+
+                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" >
+                                    <img th:src="@{${blog.firstPicture}}" src="https://unsplash.it/800/450?image=1005" alt="" class="ui  rounded image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <!--footer尾部上一页，下一页-->
+                    <div class="ui segment" th:if="${page.totalPages}>1">
+                        <div class="ui two column grid">
+                            <div class=" column">
+                                <a href="#" th:href="@{/(page=${page.number}-1)}" th:unless="${page.first}" class="ui teal basic button">上一页</a>
+                            </div>
+                            <div class="ui right aligned column">
+                                <a href="#" th:href="@{/(page=${page.number}+1)}" th:unless="${page.last}" class="ui teal basic button">下一页</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--右边的分类标签-->
+                <div class="ui three wide column">
+
+                    <!--致访客的公告-->
+                    <!--这里是一根分割线-->
+                    <div class="m-text-a ui horizontal divider ">my Voice</div>
+
+                        <div style="font-size:18px;font-weight:500;font-family: 楷体!important;">
+                            <p class="ui left aligned">我不去想，</p>
+                            <p class="content ">是否能够成功 ，</p>
+                            <p class="">既然选择了远方 ，</p>
+                            <p class="">便只顾风雨兼程。</p>
+                            <p class="">我不去想，</p>
+                            <p class="">身后会不会袭来寒风冷雨 ，</p>
+                            <p class="">既然目标是地平线，</p>
+                            <p class="">留给世界的只能是背影 。</p>
+                            <p class="">我不去想，</p>
+                            <p class="">未来是平坦还是泥泞 ，</p>
+                            <p class="">只要热爱生命 ，</p>
+                            <p class="">一切，都在意料之中。</p>
+                            <P class="right aligned">by 汪国真《热爱生命》</P>
+                            <i class="fas fa-camera-retro"></i>
+                            <i class="fas fa-bacon"></i><i class="fas fa-bacon"></i><i class="fas fa-bacon"></i><i class="fas fa-bacon"></i><i class="fas fa-bacon"></i><i class="fas fa-bacon"></i><i class="fas fa-bacon"></i>
+                        </div>
+
+                    <!--这里是一根分割线-->
+                    <div class="m-text-a ui horizontal divider m-margin  ">黑板报</div>
+                    <!--分类-->
+                    <div class="ui raised segments m-margin">
+                    <div class="ui segment">
+                        <div class="ui two column grid">
+                            <div class="column">
+                                <i class="fas fa-cat"></i>分类
+                            </div>
+                            <div class="right aligned column">
+                                <a href="#" th:href="@{/types/-1}" target="_blank">more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui orange segment">
+                        <div class="ui fluid vertical menu" >
+                            <a th:each="type : ${types}" th:href="@{/types/{id}(id=${type.id})}" class="item" href="#" target="_blank">
+                                <span th:text="${type.name}">学习日志</span>
+                                <div th:text="${#arrays.length(type.blogs)}" class="ui orange basic left pointing label">13</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                    <!--标签-->
+                    <div class="ui raised segments m-margin">
+                        <div class="ui  segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="fas fa-dove"></i>标签
+                                </div>
+                                <div class="right aligned column">
+                                    <a href="#" th:href="@{/tags/-1}" target="_blank">more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui teal segment">
+                             <a th:each="tag : ${tags}" th:href="@{/tags/{id}(id=${tag.id})}" href="#" target="_blank" class="ui teal basic left pointing label m-margin-tiny">
+                                    <span th:text="${tag.name}">方法论</span>
+                                    <div th:text="${#arrays.length(tag.blogs)}" class="detail">23</div>
+                             </a>
+                        </div>
+                    </div>
+
+                    <!--网站信息-->
+                    <div class="ui raised segments m-margin">
+                        <div class="ui segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="info icon"></i>本站信息
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui red segment">
+                            <div class="menu">
+                                <div class="item m-padded-tb"><i class="sticky note outline icon"></i>文章总数:<span th:text="${page.totalElements}">1</span>篇</div>
+                                <div class="item m-padded-tb"><i class="tasks icon"></i>分类总数:<span th:text="${typesCount}">1</span>个</div>
+                                <div class="item m-padded-tb"><i class="fa-spin spinner"></i>标签:<span th:text="${tagsCount}">1</span>个</div>
+                                <div class="item m-padded-tb"><i class="comments outline icon"></i>评论总数:<span th:text="${commentsCount}">1</span>条</div>
+                                <div class="item m-padded-tb"><i class="paper plane icon"></i>建站时长:<span id="recordTime"></span></div>
+                                <div class="item m-padded-tb"><i class="chart bar outline icon"></i>本站总访问量:<span th:text="${views}"></span></div>
+                            </div>
+                            </div>
+                        </div>
+                    <div class="m-text-a ui horizontal divider m-margin  ">微天气</div>
+                    <!--天气-->
+                    <div class="ui raised segments m-margin">
+                        <div id="he-plugin-simple"></div>
+                        <script>
+                            WIDGET = {
+                                CONFIG: {
+                                    "modules": "01234",
+                                    "background": 2,
+                                    "tmpColor": "4A4A4A",
+                                    "tmpSize": 16,
+                                    "cityColor": "4A4A4A",
+                                    "citySize": 16,
+                                    "aqiSize": 16,
+                                    "weatherIconSize": 24,
+                                    "alertIconSize": 18,
+                                    "padding": "10px 10px 10px 10px",
+                                    "shadow": "1",
+                                    "language": "auto",
+                                    "borderRadius": 5,
+                                    "fixed": "false",
+                                    "vertical": "middle",
+                                    "horizontal": "center",
+                                    "key": "110cddf2b36f40a8aca5b2d5f03ecaa4"
+                                }
+                            }
+                        </script>
+                        <script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+                    </div>
+
+                </div>
+
+              </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<th:block th:replace="_fragments :: script">
+    <!--也许用到的jQuery的引用-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js" th:src="@{https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js}"></script>
+    <!--这里进行semanticUI的js 的CDN的引用 -->
+    <script src="../static/js/semantic.min.js" th:src="@{https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js}"></script>
+</th:block>
+
+
+
+<script>
+    var audio = document.getElementsByTagName('audio')[0];
+
+    $('.music-1').click(function () {
+        audio.src="/music/脚踏车.mp3";
+        audio.play();
+    });
+    $('.music-2').click(function () {
+        audio.src="/music/淡水海边.mp3";
+        audio.play();
+    });
+    $('.music-3').click(function () {
+        audio.src="/music/早操.mp3";
+        audio.play();
+    });
+    $('.music-4').click(function () {
+        audio.src="/music/Angel.mp3";
+        audio.play();
+    });
+    $('.music-5').click(function () {
+        audio.src="/music/First Kiss.mp3";
+        audio.play();
+    });
+
+
+    $('.menu.toggle').click(function () {
+
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    function shapeChange(){
+        $('.shape').shape('flip down');
+    }
+
+    $('#sidebar-btn').click(function () {
+        $('.ui.left.sidebar')
+            .sidebar('toggle')
+        ;
+    });
+
+    $('#music-btn').click(function () {
+        $('.ui.right.sidebar')
+            .sidebar('toggle')
+        ;
+    });
+
+
+    function guolv(a) {
+        if(a<10)
+            return '0'+a;
+        return a;
+    }
+
+    function createSiteTime(){
+        var nowTime =new Date();
+        var startTime=new Date(2019,7,8,10,52,0); //月份从0开始
+        var xc=(nowTime.getTime()-startTime.getTime())/1000;
+        var day=parseInt(xc/86400);
+        xc-=day*86400;
+        var hour=parseInt(xc/3600);
+        xc-=hour*3600;
+        var min=parseInt(xc/60);
+        var sec=parseInt(xc-min*60);
+        hour=guolv(hour);
+        min=guolv(min);
+        sec=guolv(sec);
+        var str=day+'天'+hour+'小时'+min+'分'+sec;
+        $("#recordTime").html(str);
+    }
+    setInterval(createSiteTime,1000);
+    setInterval(shapeChange,4000);
+
+
+    $('.ui.form').form({
+        fields : {
+            nickname: {
+                identifier: 'nickname',
+                rules: [{
+                    type: 'empty'
+
+                }]
+            },
+            content : {
+                identifier: 'content',
+                rules: [{
+                    type : 'empty'
+                }]
+            }
+        }
+    });
+
+    $('.qq').popup();
+
+    $(function () {
+        //判断是否宽屏
+        var winWide = window.screen.width;
+
+        var wideScreen = false;
+        if (winWide <= 768) {//1024及以下分辨率
+            $('.this').toggleClass('m-container-nine');
+
+        }
+    })
+
+    var commentsPages = 0;
+    function commentsPageUp(){
+        var Lastpage = commentsPages-1;
+        commentsPages--;
+        $("#comment-container").load("/comments/commentsPage/?page="+Lastpage);
+    }
+
+    function commentsPageDown(){
+        var Nextpage = commentsPages+1;
+        commentsPages++;
+        $("#comment-container").load("/comments/commentsPage/?page="+Nextpage);
+    }
+</script>
+
+<script type="text/javascript">
+    //invokes functions as soon as window loads
+    window.onload = function(){
+        time();
+        ampm();
+        whatDay();
+        setInterval(function(){
+            time();
+            ampm();
+            whatDay();
+        }, 1000);
+    };
+
+
+    //gets current time and changes html to reflect it
+    function time(){
+        var date = new Date(),
+            hours = date.getHours(),
+            minutes = date.getMinutes(),
+            seconds = date.getSeconds();
+
+        //make clock a 12 hour clock instead of 24 hour clock
+        hours = (hours > 12) ? (hours - 12) : hours;
+        hours = (hours === 0) ? 12 : hours;
+
+        //invokes function to make sure number has at least two digits
+        hours = addZero(hours);
+        minutes = addZero(minutes);
+        seconds = addZero(seconds);
+
+        //changes the html to match results
+        document.getElementsByClassName('hours')[0].innerHTML = hours;
+        document.getElementsByClassName('minutes')[0].innerHTML = minutes;
+        document.getElementsByClassName('seconds')[0].innerHTML = seconds;
+    }
+
+    //turns single digit numbers to two digit numbers by placing a zero in front
+    function addZero (val){
+        return (val <= 9) ? ("0" + val) : val;
+    }
+
+    //lights up either am or pm on clock
+    function ampm(){
+        var date = new Date(),
+            hours = date.getHours(),
+            am = document.getElementsByClassName("am")[0].classList,
+            pm = document.getElementsByClassName("pm")[0].classList;
+
+
+        (hours >= 12) ? pm.add("light-on") : am.add("light-on");
+        (hours >= 12) ? am.remove("light-on") : pm.remove("light-on");
+    }
+
+    //lights up what day of the week it is
+    function whatDay(){
+        var date = new Date(),
+            currentDay = date.getDay(),
+            days = document.getElementsByClassName("day");
+
+        //iterates through all divs with a class of "day"
+        for (x in days){
+            //list of classes in current div
+            var classArr = days[x].classList;
+
+            (classArr !== undefined) && ((x == currentDay) ? classArr.add("light-on") : classArr.remove("light-on"));
+        }
+    }
+</script>
+
+</body>
+</html>
+

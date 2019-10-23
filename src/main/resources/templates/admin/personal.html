@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!--首先完成移动端的预览设置问题,设备的宽度初始缩放倍数为1.0倍，这里还可以设置用户禁止缩放等等-->
+    <meta name="viewport" content="device-width,initial-scale=1.0">
+    <title>个人验证</title>
+
+    <!--注意静态资源的获取-->
+    <link rel="stylesheet" th:href="@{/css/personal.css}" href="../../static/css/personal.css" media="screen" title="no title" charset="utf-8" />
+
+    <!--接下来进行semanticUI的css CDN的引用-->
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css}" href="../../static/css/semantic.css">
+</head>
+
+<body>
+<div class="ui  vertical basic segment masthead">
+    <h1 class="ui center inverted aligned header slogan">Sweat is the lubricant of success<p class="sub header">Cease to struggle and you cease to live</p> <a type="button" name="button" class="ui orange circular button" th:href="@{/admin/templateMail}">Change personal information</a> </h1>
+    <!--    <div class="ui error message"></div>-->
+    <!--    <div class="ui mini negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></div>-->
+</div>
+
+
+<!--也许用到的jQuery的引用-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<!--这里进行semanticUI的js 的CDN的引用 -->
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--<script>-->
+
+</body>
+</html>

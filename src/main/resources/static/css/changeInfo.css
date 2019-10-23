@@ -1,0 +1,24 @@
+.changeInfo {
+    align-items: center !important;
+}
+
+.changeInfo-item {
+    width: 70% !important;
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+    margin-top: 100px !important;
+    height: 40px !important;
+    align-content: center;
+}
+
+.changeInfo-button {
+    margin-right:15% !important;
+    margin-top: 50px !important;
+    margin-bottom: 400px !important;
+}
+
+.changeInfo-check {
+    margin-left: 25% !important;
+    margin-top: 50px !important;
+    margin-right: 25% !important;
+}
