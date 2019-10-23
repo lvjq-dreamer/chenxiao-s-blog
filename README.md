@@ -40,7 +40,9 @@
 分别是目录层级、翻译、扫码阅读（移动端阅读）
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191022215223279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70)
 移动端扫码呈现的结果
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191022215312637.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20191022215312637.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF)
+
 评论与赞赏
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191022215427715.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70)
@@ -100,22 +102,7 @@
 
 **（2）下面看看移动端**
 
-这里不做过多的区分
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191023174232933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191023174314782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191023174324891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191023174331183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191023174336927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191023174341376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191023174348147.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191023174352458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191023174355923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191023174402875.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9jaGVueGlhby5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70 =540x1070)
+这里不做过多的展示，可以参考博文 [传送门]( https://chenxiao.blog.csdn.net/article/details/102691492 )
 
 
 
